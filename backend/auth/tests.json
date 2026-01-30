@@ -1,0 +1,35 @@
+{
+  "tests": [
+    {
+      "name": "Test user registration",
+      "method": "POST",
+      "body": {
+        "action": "register",
+        "first_name": "Иван",
+        "last_name": "Иванов",
+        "phone": "+79991234567",
+        "email": "test@example.com"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "user_id": "number",
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test get user by ID",
+      "method": "POST",
+      "body": {
+        "action": "get_user",
+        "user_id": 1
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "id": "number",
+        "first_name": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

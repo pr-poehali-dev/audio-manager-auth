@@ -1,0 +1,33 @@
+{
+  "tests": [
+    {
+      "name": "Test add headphone",
+      "method": "POST",
+      "body": {
+        "action": "add_headphone",
+        "user_id": 1,
+        "device_name": "AirPods Pro",
+        "device_id": "abc123"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "headphone_id": "number",
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test get user headphones",
+      "method": "POST",
+      "body": {
+        "action": "get_user_headphones",
+        "user_id": 1
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "headphones": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
